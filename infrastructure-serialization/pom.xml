@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>infrastructure-serialization</artifactId>
 
-	<name>infrastructure-serialization</name>
+	<name>Infrastructure Serialization</name>
 
 	<dependencies>
 		<dependency>

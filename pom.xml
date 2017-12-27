@@ -244,5 +244,6 @@
 		<module>infrastructure-configuration</module>
 		<module>infrastructure-common-util</module>
 		<module>infrastructure-serialization</module>
+		<module>infrastructure-comparison</module>
 	</modules>
 </project>
