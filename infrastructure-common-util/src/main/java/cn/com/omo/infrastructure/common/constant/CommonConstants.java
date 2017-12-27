@@ -15,7 +15,7 @@ public class CommonConstants {
 
     /* charset name */
     public static final String UTF_8_CHARSET_NAME = "UTF-8";
-    public static final String GBK_UTF_8_CHARSET_NAME = "GBK";
+    public static final String GBK_CHARSET_NAME = "GBK";
     public static final String ISO_CHARSET_NAME = "ISO-8859-1";
 
     /* SYMBOL */
