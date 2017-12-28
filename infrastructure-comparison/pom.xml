@@ -10,4 +10,11 @@
 	<artifactId>infrastructure-comparison</artifactId>
 
 	<name>Infrastructure Comparison</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+	</dependencies>
 </project>
