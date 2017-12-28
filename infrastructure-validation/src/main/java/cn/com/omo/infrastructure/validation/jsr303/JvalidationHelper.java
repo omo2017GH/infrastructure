@@ -1,9 +1,3 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.validation.jsr303;
 
 import java.lang.annotation.Annotation;
@@ -31,7 +25,6 @@ import cn.com.omo.infrastructure.common.util.ReflectionUtils;
 import cn.com.omo.infrastructure.common.util.number.NumberFormatterUtils;
 import cn.com.omo.infrastructure.validation.core.item.ValidationItem;
 import cn.com.omo.infrastructure.validation.core.target.ValidationTarget;
-import cn.com.omo.infrastructure.validation.jsr303.core.item.JvalidationItemFactory;
 import cn.com.omo.infrastructure.validation.jsr303.core.result.JvalidationResult;
 import cn.com.omo.infrastructure.validation.jsr303.core.result.JvalidationResultFactory;
 import cn.com.omo.infrastructure.validation.jsr303.core.target.SimpleJvalidationTarget;

@@ -9,7 +9,7 @@ package cn.com.omo.infrastructure.cache.core;
  * @version 
  * @since 1.0
   */
-public interface LocalCacheService<K, V> {
+public interface LocalCache<K, V> {
 
     /**
      * 从本地缓存中获取bean（Key为null时返回null）

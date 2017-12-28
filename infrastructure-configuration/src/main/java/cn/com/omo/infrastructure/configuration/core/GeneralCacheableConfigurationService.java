@@ -1,14 +1,10 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.configuration.core;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.InitializingBean;
 
-import cn.com.omo.infrastructure.cache.core.LocalCacheService;
+import cn.com.omo.infrastructure.cache.core.ConcurrentLocalCache;
+import cn.com.omo.infrastructure.cache.core.LocalCache;
 
 /**
  *
@@ -18,9 +14,9 @@ import cn.com.omo.infrastructure.cache.core.LocalCacheService;
  * @version
  * @since 1.0
  */
-public class GeneralCacheableConfigurationService extends AbstractCacheableConfigurationService {
+public class GeneralCacheableConfigurationService extends AbstractCacheableConfigurationService implements InitializingBean {
 
-    private static LocalCacheService<String, String> configs;
+    private LocalCache<String, String> configs;
 
     @Override
     public String getCacheValue(String key) {
@@ -48,7 +44,14 @@ public class GeneralCacheableConfigurationService extends AbstractCacheableConfi
         return null;
     }
 
-    public static void setConfigs(LocalCacheService<String, String> configs) {
-        GeneralCacheableConfigurationService.configs = configs;
+    public void setConfigs(LocalCache<String, String> configs) {
+        this.configs = configs;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if (configs == null) {
+            configs = new ConcurrentLocalCache<String>();
+        }
     }
 }

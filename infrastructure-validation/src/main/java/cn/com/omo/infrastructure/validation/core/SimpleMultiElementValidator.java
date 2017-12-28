@@ -1,15 +1,9 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.validation.core;
 
 import java.util.List;
 
+import cn.com.omo.infrastructure.validation.ValidationReportor;
 import cn.com.omo.infrastructure.validation.core.item.ValidationItem;
-import cn.com.omo.infrastructure.validation.core.result.ValidationReportor;
 import cn.com.omo.infrastructure.validation.core.target.SimpleValidationTarget;
 import cn.com.omo.infrastructure.validation.core.target.ValidationTarget;
 

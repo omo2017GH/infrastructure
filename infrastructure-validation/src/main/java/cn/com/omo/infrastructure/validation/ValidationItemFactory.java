@@ -1,9 +1,3 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.validation;
 
 import java.math.BigDecimal;
@@ -39,8 +33,6 @@ public class ValidationItemFactory {
     private List<ValidationItem> items = new ArrayList<ValidationItem>(ITEMS_CAPACITY);
 
     private Set<Class<? extends ValidationItem>> validationItemClazzSet = new HashSet<Class<? extends ValidationItem>>(ITEMS_CAPACITY);
-
-//    private static final List<Class<?>> WHITE_LIST = Arrays.asList(new Class<?>[] { EquivalenceValidationItem.class, InequivalenceValidationItem.class });
 
     public ValidationItemFactory addValidationItem(ValidationItem item) {
         if (validationItemClazzSet.add(item.getClass())) {

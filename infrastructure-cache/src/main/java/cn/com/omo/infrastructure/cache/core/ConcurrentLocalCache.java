@@ -1,15 +1,7 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.cache.core;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import org.springframework.stereotype.Service;
 
 /**
  *
@@ -19,13 +11,12 @@ import org.springframework.stereotype.Service;
  * @version 
  * @since 1.0
   */
-@Service("GeneralLocalCacheService")
-public class GeneralLocalCacheService extends AbstractLocalCacheService<String, Object> {
+public class ConcurrentLocalCache<T> extends AbstractLocalCache<String, T> {
 
     private static final Map<String, Object> INTERNAL_CACHE = new ConcurrentHashMap<String, Object>();
 
     @Override
-    public void cacheBean(String key, Object value) {
+    public void cacheBean(String key, T value) {
         INTERNAL_CACHE.put(key, value);
     }
 
@@ -35,12 +26,13 @@ public class GeneralLocalCacheService extends AbstractLocalCacheService<String, 
     }
 
     @Override
-    protected Object getBeanFromLocalCache(String key) {
-        return INTERNAL_CACHE.get(key);
+    @SuppressWarnings("unchecked")
+    protected T getBeanFromLocalCache(String key) {
+        return (T) INTERNAL_CACHE.get(key);
     }
 
     @Override
-    protected Object getBeanFromPlanB(String key) {
+    protected T getBeanFromPlanB(String key) {
         return null;
     }
 

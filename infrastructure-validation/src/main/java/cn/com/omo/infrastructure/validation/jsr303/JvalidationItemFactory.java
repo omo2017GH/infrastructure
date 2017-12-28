@@ -1,12 +1,18 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
-package cn.com.omo.infrastructure.validation.jsr303.core.item;
+package cn.com.omo.infrastructure.validation.jsr303;
 
 import java.math.BigDecimal;
+
+import cn.com.omo.infrastructure.validation.jsr303.core.item.BooleanJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.DecimalMaxJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.DecimalMinJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.DigitsJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.FutureJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.MaxJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.MinJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.NullOrNotJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.PastJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.PatternJvalidationItem;
+import cn.com.omo.infrastructure.validation.jsr303.core.item.SizeJvalidationItem;
 
 /**
  *

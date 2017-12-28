@@ -10,7 +10,7 @@ import cn.com.omo.infrastructure.cache.Cacheable;
  * @version
  * @since 1.0
  */
-public abstract class AbstractLocalCacheService<K, V> implements LocalCacheService<K, V>, Cacheable {
+public abstract class AbstractLocalCache<K, V> implements LocalCache<K, V>, Cacheable {
 
     @Override
     public V getBean(K key) {
