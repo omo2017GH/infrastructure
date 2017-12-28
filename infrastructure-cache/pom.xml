@@ -11,4 +11,11 @@
 	<artifactId>infrastructure-cache</artifactId>
 
 	<name>Infrastructure Cache</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+	</dependencies>
 </project>
