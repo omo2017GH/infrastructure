@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * @version 
  * @since 1.0
   */
-public interface LocalConfigurationService {
+public interface LocalConfiguration {
 
     String getStringValue(String key);
     

@@ -12,7 +12,7 @@ import cn.com.omo.infrastructure.configuration.core.source.ConfigSource;
  * @version 
  * @since 1.0
   */
-public interface MultiSourceConfigurationService extends LocalConfigurationService {
+public interface MultiSourceConfiguration extends LocalConfiguration {
 
     void addSource(ConfigSource source);
 

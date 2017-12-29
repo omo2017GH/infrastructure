@@ -10,7 +10,7 @@ import cn.com.omo.infrastructure.cache.Cacheable;
  * @version 
  * @since 1.0
   */
-public interface CacheableConfigurationService extends LocalConfigurationService, Cacheable {
+public interface CacheableConfiguration extends LocalConfiguration, Cacheable {
 
     String getCacheValue(String key);
 

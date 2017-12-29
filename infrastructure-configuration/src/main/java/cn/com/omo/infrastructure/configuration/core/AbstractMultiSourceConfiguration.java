@@ -14,7 +14,7 @@ import cn.com.omo.infrastructure.configuration.core.source.ConfigSource;
  * @version
  * @since 1.0
  */
-public abstract class AbstractMultiSourceConfigurationService extends AbstractLocalConfigurationService implements MultiSourceConfigurationService {
+public abstract class AbstractMultiSourceConfiguration extends AbstractLocalConfiguration implements MultiSourceConfiguration {
 
     @Override
     public String getStringValue(String key) {

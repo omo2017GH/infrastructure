@@ -15,7 +15,7 @@ import cn.com.omo.infrastructure.configuration.core.source.ConfigSource;
  * @version
  * @since 1.0
  */
-public class GeneralMultiSourceConfigurationService extends AbstractMultiSourceConfigurationService {
+public class GeneralMultiSourceConfiguration extends AbstractMultiSourceConfiguration {
 
     private List<ConfigSource> sources = new LinkedList<ConfigSource>();
     private Sorter sorter = new CommonSorter();

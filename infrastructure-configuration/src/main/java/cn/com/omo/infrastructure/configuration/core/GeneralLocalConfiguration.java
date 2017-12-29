@@ -20,11 +20,11 @@ import cn.com.omo.infrastructure.configuration.core.source.ConfigSource;
  * @since 1.0
   */
 @Service("GeneralLocalConfigurationService")
-public class GeneralLocalConfigurationService extends GeneralCacheableConfigurationService implements InitializingBean, ApplicationContextAware {
+public class GeneralLocalConfiguration extends GeneralCacheableConfiguration implements InitializingBean, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
-    private MultiSourceConfigurationService configs;
+    private MultiSourceConfiguration configs;
 
     @Override
     protected String getStringValueFromPlanB(String key) {
@@ -47,7 +47,7 @@ public class GeneralLocalConfigurationService extends GeneralCacheableConfigurat
             throw new IllegalArgumentException("ConfigSource must not be null");
         }
 
-        configs = new GeneralMultiSourceConfigurationService();
+        configs = new GeneralMultiSourceConfiguration();
         for (Entry<String, ConfigSource> configSource: configSources.entrySet()) {
             configs.addSource(configSource.getValue());
         }

@@ -14,7 +14,7 @@ import cn.com.omo.infrastructure.cache.core.LocalCache;
  * @version
  * @since 1.0
  */
-public class GeneralCacheableConfigurationService extends AbstractCacheableConfigurationService implements InitializingBean {
+public class GeneralCacheableConfiguration extends AbstractCacheableConfiguration implements InitializingBean {
 
     private LocalCache<String, String> configs;
 

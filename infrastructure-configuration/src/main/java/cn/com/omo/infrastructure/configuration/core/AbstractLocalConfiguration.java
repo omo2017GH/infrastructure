@@ -12,13 +12,13 @@ import cn.com.omo.infrastructure.common.util.number.NumberFormatterUtils;
  * @version 
  * @since 1.0
   */
-public abstract class AbstractLocalConfigurationService implements LocalConfigurationService {
+public abstract class AbstractLocalConfiguration implements LocalConfiguration {
 
     private static final String TRUE_STRING = "TRUE";
     private static final String FALSE_STRING = "FALSE";
 
     /**
-     * @see com.huifu.ubs.service.common.configuration.LocalConfigurationService#getBooleanValue(java.lang.String)
+     * @see com.LocalConfiguration.ubs.service.common.configuration.LocalConfigurationService#getBooleanValue(java.lang.String)
      */
     @Override
     public Boolean getBooleanValue(String key) {
@@ -33,7 +33,7 @@ public abstract class AbstractLocalConfigurationService implements LocalConfigur
     }
 
     /**
-     * @see com.huifu.ubs.service.common.configuration.LocalConfigurationService#getIntegerValue(java.lang.String)
+     * @see com.LocalConfiguration.ubs.service.common.configuration.LocalConfigurationService#getIntegerValue(java.lang.String)
      */
     @Override
     public Integer getIntegerValue(String key) {
@@ -42,7 +42,7 @@ public abstract class AbstractLocalConfigurationService implements LocalConfigur
     }
 
     /**
-     * @see com.huifu.ubs.service.common.configuration.LocalConfigurationService#getBigDecimalValue(java.lang.String)
+     * @see com.LocalConfiguration.ubs.service.common.configuration.LocalConfigurationService#getBigDecimalValue(java.lang.String)
      */
     @Override
     public BigDecimal getBigDecimalValue(String key) {

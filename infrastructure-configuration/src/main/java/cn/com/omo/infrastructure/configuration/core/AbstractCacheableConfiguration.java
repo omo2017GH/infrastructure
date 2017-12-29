@@ -10,8 +10,8 @@ import org.apache.commons.lang3.StringUtils;
  * @version
  * @since 1.0
  */
-public abstract class AbstractCacheableConfigurationService extends AbstractLocalConfigurationService
-        implements CacheableConfigurationService {
+public abstract class AbstractCacheableConfiguration extends AbstractLocalConfiguration
+        implements CacheableConfiguration {
 
     @Override
     public String getStringValue(String key) {
