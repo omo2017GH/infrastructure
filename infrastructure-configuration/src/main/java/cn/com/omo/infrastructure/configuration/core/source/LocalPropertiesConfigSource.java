@@ -36,7 +36,7 @@ public class LocalPropertiesConfigSource extends AbstractConfigSource implements
      */
     @Override
     public int getOrder() {
-        return 0;
+        return LOWEST_PRECEDENCE;
     }
 
     /**

@@ -1,4 +1,4 @@
-package cn.com.omo.infrastructure.comparison;
+package cn.com.omo.infrastructure.comparison.core;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,7 +17,7 @@ import org.springframework.core.Ordered;
 public abstract class AbstractSorter implements Sorter {
 
     /**
-     * @see cn.com.omo.infrastructure.comparison.Sorter#sort(java.util.List)
+     * @see cn.com.omo.infrastructure.comparison.core.Sorter#sort(java.util.List)
      */
     @Override
     public void sort(List<? extends Ordered> list) {
@@ -25,7 +25,7 @@ public abstract class AbstractSorter implements Sorter {
     }
 
     /**
-     * @see cn.com.omo.infrastructure.comparison.Sorter#sortByDesc(java.util.List)
+     * @see cn.com.omo.infrastructure.comparison.core.Sorter#sortByDesc(java.util.List)
      */
     @Override
     public void sortByDesc(List<? extends Ordered> list) {

@@ -15,23 +15,23 @@ import org.springframework.core.Ordered;
 public class CommonComparatorFactory {
 
     public static final Comparator<Ordered> getHighPrecedenceComparator() {
-        return ComparatorHolder.common1;
+        return ComparatorHolder.COMMON_1;
     }
 
     public static final Comparator<Ordered> getLowPrecedenceComparator() {
-        return ComparatorHolder.common2;
+        return ComparatorHolder.COMMON_2;
     }
 
     private static class ComparatorHolder {
 
-        private static final Comparator<Ordered> common1 = new Comparator<Ordered>() {
+        private static final Comparator<Ordered> COMMON_1 = new Comparator<Ordered>() {
             @Override
             public int compare(Ordered o1, Ordered o2) {
                 return o1.getOrder() - o2.getOrder();
             }
         };
 
-        private static final Comparator<Ordered> common2 = new Comparator<Ordered>() {
+        private static final Comparator<Ordered> COMMON_2 = new Comparator<Ordered>() {
             @Override
             public int compare(Ordered o1, Ordered o2) {
                 return o2.getOrder() - o1.getOrder();

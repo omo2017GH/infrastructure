@@ -3,8 +3,8 @@ package cn.com.omo.infrastructure.configuration.core;
 import java.util.LinkedList;
 import java.util.List;
 
-import cn.com.omo.infrastructure.comparison.CommonSorter;
-import cn.com.omo.infrastructure.comparison.Sorter;
+import cn.com.omo.infrastructure.comparison.core.CommonSorter;
+import cn.com.omo.infrastructure.comparison.core.Sorter;
 import cn.com.omo.infrastructure.configuration.core.source.ConfigSource;
 
 /**

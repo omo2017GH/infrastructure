@@ -1,4 +1,4 @@
-package cn.com.omo.infrastructure.comparison;
+package cn.com.omo.infrastructure.comparison.core;
 
 import java.util.List;
 

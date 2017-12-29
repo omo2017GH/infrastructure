@@ -1,8 +1,10 @@
-package cn.com.omo.infrastructure.comparison;
+package cn.com.omo.infrastructure.comparison.core;
 
 import java.util.Comparator;
 
 import org.springframework.core.Ordered;
+
+import cn.com.omo.infrastructure.comparison.CommonComparatorFactory;
 
 /**
  *
@@ -15,7 +17,7 @@ import org.springframework.core.Ordered;
 public class CommonSorter extends AbstractSorter {
 
     /**
-     * @see cn.com.omo.infrastructure.comparison.AbstractSorter#getComparator()
+     * @see cn.com.omo.infrastructure.comparison.core.AbstractSorter#getComparator()
      */
     @Override
     protected Comparator<Ordered> getComparator() {
@@ -23,7 +25,7 @@ public class CommonSorter extends AbstractSorter {
     }
 
     /**
-     * @see cn.com.omo.infrastructure.comparison.AbstractSorter#getDescComparator()
+     * @see cn.com.omo.infrastructure.comparison.core.AbstractSorter#getDescComparator()
      */
     @Override
     protected Comparator<Ordered> getDescComparator() {
