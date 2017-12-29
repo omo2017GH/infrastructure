@@ -1,9 +1,3 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.serialization;
 
 import com.alibaba.fastjson.JSON;
@@ -20,7 +14,7 @@ import cn.com.omo.infrastructure.serialization.core.Serializer;
  * @version
  * @since 1.0
  */
-public class SerializationFactory {
+public class JsonSerializationFactory {
 
     public static Serializer getGsonSerializer() {
         return SerializerHolder.getGsonSerializer();

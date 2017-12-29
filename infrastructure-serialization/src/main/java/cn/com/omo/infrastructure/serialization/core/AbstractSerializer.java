@@ -1,9 +1,3 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.serialization.core;
 
 import java.util.List;
@@ -78,5 +72,5 @@ public abstract class AbstractSerializer implements Serializer {
 
     protected abstract List<String> bean2List(Object bean);
 
-    protected abstract <T> void initializeBean(String[] fieldValues, T newInstance);
+    protected abstract void initializeBean(String[] fieldValues, Object newInstance);
 }

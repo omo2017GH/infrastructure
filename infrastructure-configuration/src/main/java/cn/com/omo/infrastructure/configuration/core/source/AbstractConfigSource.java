@@ -1,9 +1,3 @@
-/**
- * 
- * 汇付天下
- * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
- *
- */
 package cn.com.omo.infrastructure.configuration.core.source;
 
 import org.apache.commons.lang3.StringUtils;
