@@ -4,7 +4,7 @@
  * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
  *
  */
-package cn.com.omo.infrastructure.common.model.exception;
+package cn.com.omo.infrastructure.common.util;
 
 import org.apache.commons.lang3.StringUtils;
 
