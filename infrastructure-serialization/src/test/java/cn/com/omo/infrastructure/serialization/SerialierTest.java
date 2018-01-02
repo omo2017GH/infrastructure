@@ -4,11 +4,11 @@
  * Copyright (c) 2017-2020 ChinaPnR,Inc.All Rights Reserved.
  *
  */
-package cn.com.omo.infrastructure.serialization.model;
+package cn.com.omo.infrastructure.serialization;
 
 import java.math.BigDecimal;
 
-import cn.com.omo.infrastructure.serialization.TestBeanSerializer;
+import cn.com.omo.infrastructure.serialization.model.TestBean;
 
 /**
  *
