@@ -38,6 +38,7 @@ public class CommonConstants {
     public static final String SLASH = "/";
     public static final String BACK_SLASH = "\\";
     public static final String PIPE = "|";
+    public static final String ESCAPE_PIPE = BACK_SLASH + PIPE;
     public static final String THREE_PIPE = "|||";
     public static final String UNDERLINE = "_";
     public static final String DOLOR = "$";

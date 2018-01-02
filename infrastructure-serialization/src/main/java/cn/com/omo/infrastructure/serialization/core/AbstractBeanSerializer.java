@@ -55,32 +55,39 @@ public abstract class AbstractBeanSerializer extends AbstractSerializer {
      */
     @Override
     protected void initializeBean(String[] fieldValues, Object newInstance) {
+        int length = fieldValues.length;
         Field[] declaredFields = sortAndGetFields(newInstance);
-        if (declaredFields.length != fieldValues.length) {
+        if (declaredFields.length != length) {
             throw new DeserializationException("反序列化对象异常：字段个数与序列元素个数不同");
         }
 
         Object[] objs = convertStrs2Objs(fieldValues);
-        if (objs.length != fieldValues.length) {
+        if (objs.length != length) {
             throw new DeserializationException("反序列化对象异常：字符串转对象异常");
         }
 
         int objIndex = 0;
         for (Field declaredField : declaredFields) {
             try {
-                declaredField.setAccessible(true);
+                if (!declaredField.isAccessible()) {
+                    declaredField.setAccessible(true);
+                }
                 declaredField.set(newInstance, objs[objIndex++]);
-                declaredField.setAccessible(false);
             } catch (IllegalArgumentException | IllegalAccessException e) {
                 throw new DeserializationException("反序列化对象异常", e);
             }
         }
     }
 
+    /**
+     * 将分割后的序列，转化成bean的属性
+     * @param fieldValues
+     * @return
+     */
     protected abstract Object[] convertStrs2Objs(String[] fieldValues);
 
     private Field[] sortAndGetFields(Object obj) {
-        Field[] declaredFields = ReflectionUtils.getDeclaredFields(obj.getClass());
+        Field[] declaredFields = ReflectionUtils.getPrivateDeclaredFields(obj.getClass());
         if (declaredFields == null || declaredFields.length == 0) {
             return null;
         } else if (declaredFields.length > 1) {

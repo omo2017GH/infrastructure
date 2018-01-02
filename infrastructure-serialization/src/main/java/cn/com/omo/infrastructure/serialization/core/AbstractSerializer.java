@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
+import cn.com.omo.infrastructure.common.constant.CommonConstants;
 import cn.com.omo.infrastructure.serialization.exception.DeserializationException;
 import cn.com.omo.infrastructure.serialization.exception.SerializationException;
 
@@ -29,6 +30,8 @@ public abstract class AbstractSerializer implements Serializer {
         String splitRegex = getSplitRegex();
         if (StringUtils.isBlank(splitRegex)) {
             throw new SerializationException("序列化对象异常：无效的分隔符");
+        } else if (splitRegex.equals(CommonConstants.ESCAPE_PIPE)) {
+            splitRegex = splitRegex.replace(splitRegex, CommonConstants.PIPE);
         }
 
         List<String> fieldValues = bean2List(bean);
@@ -68,9 +71,23 @@ public abstract class AbstractSerializer implements Serializer {
         }
     }
 
+    /**
+     * 序列分隔符
+     * @return
+     */
     public abstract String getSplitRegex();
 
+    /**
+     * 通过重写toString方法，自定义bean字段的序列化方式
+     * @param bean
+     * @return
+     */
     protected abstract List<String> bean2List(Object bean);
 
+    /**
+     * split序列分隔符并实例化newInstance并赋值
+     * @param fieldValues
+     * @param newInstance
+     */
     protected abstract void initializeBean(String[] fieldValues, Object newInstance);
 }

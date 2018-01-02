@@ -211,7 +211,7 @@ public class JvalidationHelper {
     protected static Field[] getAllDeclaredFields(Class<?> clazz) {
         Field[] declaredFields = null;
         try {
-            declaredFields = ReflectionUtils.getDeclaredFields(clazz);
+            declaredFields = ReflectionUtils.getPrivateDeclaredFields(clazz);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -2,6 +2,7 @@ package cn.com.omo.infrastructure.common.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Collection;
@@ -117,12 +118,12 @@ public final class ReflectionUtils {
     }
 
     /**
-     * 循环向上,获取类的DeclaredFields
+     * 获取类及超类的declared fields
      * 
      * @param clazz
      * @return
      */
-    public static final Field[] getDeclaredFields(Class<?> clazz) {
+    public static final Field[] getALLDeclaredFields(Class<?> clazz) {
         Set<Field> tmp = new HashSet<Field>();
         for (Class<?> superClass = clazz; superClass != Object.class; superClass = superClass.getSuperclass()) {
             Field[] declaredFields = superClass.getDeclaredFields();
@@ -130,6 +131,36 @@ public final class ReflectionUtils {
                 continue;
             }
             Collections.addAll(tmp, declaredFields);
+        }
+
+        if (tmp.isEmpty()) {
+            return null;
+        } else {
+            return tmp.toArray(new Field[0]);
+        }
+    }
+
+    /**
+     * 获取类及超类的private declared fields
+     * 
+     * @param clazz
+     * @return
+     */
+    public static final Field[] getPrivateDeclaredFields(Class<?> clazz) {
+        Set<Field> tmp = new HashSet<Field>();
+        for (Class<?> superClass = clazz; superClass != Object.class; superClass = superClass.getSuperclass()) {
+            Field[] declaredFields = superClass.getDeclaredFields();
+            if (declaredFields == null || declaredFields.length == 0) {
+                continue;
+            }
+
+            // 按照javabean的自省方式，仅获取private字段
+            for (Field declaredField : declaredFields) {
+                int mods = declaredField.getModifiers();
+                if (Modifier.isPrivate(mods) && !Modifier.isStatic(mods) && !Modifier.isFinal(mods)) {
+                    tmp.add(declaredField);
+                }
+            }
         }
 
         if (tmp.isEmpty()) {
