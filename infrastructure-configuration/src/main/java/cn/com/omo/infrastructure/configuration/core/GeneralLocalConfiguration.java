@@ -20,14 +20,14 @@ import cn.com.omo.infrastructure.configuration.core.source.ConfigSource;
  * @since 1.0
   */
 @Service("GeneralLocalConfigurationService")
-public class GeneralLocalConfiguration extends GeneralCacheableConfiguration implements InitializingBean, ApplicationContextAware {
+public class GeneralLocalConfiguration extends AbstractLocalConfiguration implements InitializingBean, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
     private MultiSourceConfiguration configs;
 
     @Override
-    protected String getStringValueFromPlanB(String key) {
+    public String getStringValue(String key) {
         return configs.getStringValue(key);
     }
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.stereotype.Component;
 
 /**
  *
@@ -17,6 +18,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  * @version
  * @since 1.0
  */
+@Component
 public class LocalPropertiesConfigSource extends AbstractConfigSource implements InitializingBean {
 
     private static final String DEFAULT_PROP_PATH = "classpath*:";
