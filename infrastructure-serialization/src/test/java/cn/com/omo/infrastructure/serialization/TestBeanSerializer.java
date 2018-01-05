@@ -1,5 +1,6 @@
 package cn.com.omo.infrastructure.serialization;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 
 import cn.com.omo.infrastructure.serialization.core.AbstractBeanSerializer;
@@ -18,7 +19,7 @@ public class TestBeanSerializer extends AbstractBeanSerializer {
      * @see cn.com.omo.infrastructure.serialization.core.AbstractBeanSerializer#convertStrs2Objs(java.lang.String[])
      */
     @Override
-    protected Object[] convertStrs2Objs(String[] fieldValues) {
+    protected Object[] convertStrs2Objs(String[] fieldValues, Field[] declaredFields) {
         int length = fieldValues.length;
         if (length != 4) {
             return null;

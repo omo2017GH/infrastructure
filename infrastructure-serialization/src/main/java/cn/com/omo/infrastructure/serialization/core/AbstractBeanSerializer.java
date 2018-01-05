@@ -61,7 +61,7 @@ public abstract class AbstractBeanSerializer extends AbstractSerializer {
             throw new DeserializationException("反序列化对象异常：字段个数与序列元素个数不同");
         }
 
-        Object[] objs = convertStrs2Objs(fieldValues);
+        Object[] objs = convertStrs2Objs(fieldValues, declaredFields);
         if (objs.length != length) {
             throw new DeserializationException("反序列化对象异常：字符串转对象异常");
         }
@@ -84,7 +84,7 @@ public abstract class AbstractBeanSerializer extends AbstractSerializer {
      * @param fieldValues
      * @return
      */
-    protected abstract Object[] convertStrs2Objs(String[] fieldValues);
+    protected abstract Object[] convertStrs2Objs(String[] fieldValues, Field[] declaredFields);
 
     private Field[] sortAndGetFields(Object obj) {
         Field[] declaredFields = ReflectionUtils.getPrivateDeclaredFields(obj.getClass());

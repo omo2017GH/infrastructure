@@ -3,6 +3,8 @@ package cn.com.omo.infrastructure.serialization.core;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanInstantiationException;
+import org.springframework.beans.BeanUtils;
 
 import cn.com.omo.infrastructure.common.constant.CommonConstants;
 import cn.com.omo.infrastructure.serialization.exception.DeserializationException;
@@ -31,7 +33,7 @@ public abstract class AbstractSerializer implements Serializer {
         if (StringUtils.isBlank(splitRegex)) {
             throw new SerializationException("序列化对象异常：无效的分隔符");
         } else if (splitRegex.equals(CommonConstants.ESCAPE_PIPE)) {
-            splitRegex = splitRegex.replace(splitRegex, CommonConstants.PIPE);
+            splitRegex = CommonConstants.PIPE;
         }
 
         List<String> fieldValues = bean2List(bean);
@@ -57,7 +59,7 @@ public abstract class AbstractSerializer implements Serializer {
         }
 
         try {
-            T newInstance = clazz.newInstance();
+            T newInstance = BeanUtils.instantiateClass(clazz);
 
             String[] fieldValues = series.split(getSplitRegex());
             if (fieldValues == null || fieldValues.length == 0) {
@@ -66,7 +68,7 @@ public abstract class AbstractSerializer implements Serializer {
 
             initializeBean(fieldValues, newInstance);
             return newInstance;
-        } catch (InstantiationException | IllegalAccessException e) {
+        } catch (BeanInstantiationException e) {
             throw new DeserializationException("反序列化对象异常", e);
         }
     }

@@ -1,5 +1,6 @@
 package cn.com.omo.infrastructure.common.util;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -18,9 +19,9 @@ import org.apache.commons.lang3.ArrayUtils;
  * @date 2017年12月27日
  * 
  * @author zhihong.he
- * @version 
+ * @version
  * @since 1.0
-  */
+ */
 public final class ReflectionUtils {
 
     /**
@@ -306,5 +307,42 @@ public final class ReflectionUtils {
      */
     public static Class<?> getSuperClassGenricType(Class<?> clazz) {
         return getSuperClassGenricType(clazz, 0);
+    }
+
+    public static Constructor<?> getDeclaredConstructor(Class<?> clazz, Class<?>... parameterTypes) {
+        try {
+            return clazz.getDeclaredConstructor(parameterTypes);
+        } catch (NoSuchMethodException | SecurityException e) {
+            return null;
+        }
+    }
+
+    public static Class<?> convertPrimitive2Wrapper(Class<?> primitiveType) {
+        if (primitiveType.equals(boolean.class)) {
+            return Boolean.class;
+        }
+        if (primitiveType.equals(byte.class)) {
+            return Byte.class;
+        }
+        if (primitiveType.equals(char.class)) {
+            return Character.class;
+        }
+        if (primitiveType.equals(double.class)) {
+            return Double.class;
+        }
+        if (primitiveType.equals(float.class)) {
+            return Float.class;
+        }
+        if (primitiveType.equals(int.class)) {
+            return Integer.class;
+        }
+        if (primitiveType.equals(long.class)) {
+            return Long.class;
+        }
+        if (primitiveType.equals(short.class)) {
+            return Short.class;
+        }
+
+        return null;
     }
 }
