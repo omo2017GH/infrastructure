@@ -37,7 +37,7 @@ public class SimpleBeanSerializer extends AbstractBeanSerializer {
             Constructor<?> declaredConstructor = ReflectionUtils.getDeclaredConstructor(fieldType, String.class);
             if (declaredConstructor == null && fieldWrappedType == null) {
                 throw new DeserializationException(String.format("反序列化对象异常：字段[name=%s, type=%s]不支持属性的自动转化", field.getName(), fieldType));
-            } else if (fieldWrappedType != null) {
+            } else if (declaredConstructor == null && fieldWrappedType != null) {
                 declaredConstructor = ReflectionUtils.getDeclaredConstructor(fieldWrappedType, String.class);
             }
 
