@@ -5,8 +5,8 @@
 
 package org.infrastructure.common.strategy;
 
+import org.infrastructure.common.strategy.core.AbstractStrategyContextWrapper;
 import org.infrastructure.common.strategy.core.SimpleStrategyContextWrapper;
-import org.infrastructure.common.strategy.core.StrategyContextWrapper;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -26,7 +26,7 @@ public class BeanBOService implements ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     public void test(IBeanBOContext boCtx) {
-        StrategyContextWrapper appStrategyCtx = new SimpleStrategyContextWrapper(boCtx, applicationContext);
+        AbstractStrategyContextWrapper appStrategyCtx = new SimpleStrategyContextWrapper(boCtx, applicationContext);
         boCtx.getStrategy().execute(appStrategyCtx);
     }
 

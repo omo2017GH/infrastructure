@@ -8,7 +8,7 @@ package org.infrastructure.common.strategy.core;
 import org.springframework.context.ApplicationContext;
 
 /**
- * 
+ * StrategyContext包装器抽象类
  * @date 2018年5月14日
  * 
  * @author zhihong.he
