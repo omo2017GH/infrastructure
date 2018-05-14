@@ -12,7 +12,7 @@ import cn.com.omo.infrastructure.serialization.anno.SeriesInfo;
  * @version
  * @since 1.0
  */
-public abstract class TestSuperBean implements Serializable {
+public abstract class AbstractTestSuperBean implements Serializable {
 
     /**
      * 

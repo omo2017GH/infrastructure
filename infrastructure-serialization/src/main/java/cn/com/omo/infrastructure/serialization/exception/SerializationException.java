@@ -20,4 +20,8 @@ public class SerializationException extends InfrastructureException {
     public SerializationException(String message) {
         super(message);
     }
+
+    public SerializationException(String message, Throwable t) {
+        super(message, t);
+    }
 }

@@ -11,13 +11,13 @@ import java.util.List;
  */
 public class ListUtils {
 
-	public static <T> List<T> ArrayToList(T[] array) {
+	public static <T> List<T> arrayToList(T[] array) {
 		List<T> list = new ArrayList<T>(Arrays.asList(array));
 		return list;
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> T[] ListToArray(List<T> list, Class<T> classType) {
+	public static <T> T[] listToArray(List<T> list, Class<T> classType) {
 		if (list == null) {
 			return null;
 		}

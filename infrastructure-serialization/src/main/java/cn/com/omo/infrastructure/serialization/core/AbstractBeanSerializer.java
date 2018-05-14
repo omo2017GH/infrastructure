@@ -81,6 +81,7 @@ public abstract class AbstractBeanSerializer extends AbstractSerializer {
 
     /**
      * 将分割后的序列，转化成bean的属性
+     * 
      * @param fieldValues
      * @return
      */

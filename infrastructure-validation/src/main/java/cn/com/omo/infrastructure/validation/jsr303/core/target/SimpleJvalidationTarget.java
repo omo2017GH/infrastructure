@@ -44,6 +44,6 @@ public class SimpleJvalidationTarget extends SimpleValidationTarget implements J
             jvalidationItems.add((JvalidationItem) item);
         }
 
-        return ListUtils.ListToArray(jvalidationItems, JvalidationItem.class);
+        return ListUtils.listToArray(jvalidationItems, JvalidationItem.class);
     }
 }

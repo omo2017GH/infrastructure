@@ -1,18 +1,29 @@
+/**
+ * Copyright: Copyright (c) 2018
+ * Company: www.91wutong.com
+ */
+
 package cn.com.omo.infrastructure.serialization;
 
+import java.io.IOException;
+
 import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import cn.com.omo.infrastructure.serialization.core.Serializer;
+import cn.com.omo.infrastructure.serialization.exception.DeserializationException;
+import cn.com.omo.infrastructure.serialization.exception.SerializationException;
 
 /**
- *
- * @date 2017年12月28日
+ * 
+ * @date 2018年2月11日
  * 
  * @author zhihong.he
- * @version
- * @since 1.0
+ * @version 
+ * @since 0.0.1-SNAPSHOT
  */
 public class JsonSerializationFactory {
 
@@ -24,10 +35,15 @@ public class JsonSerializationFactory {
         return SerializerHolder.getFastJsonSerializer();
     }
 
+    public static Serializer getJacksonSerializer() {
+        return SerializerHolder.getJacksonSerializer();
+    }
+
     private static class SerializerHolder {
 
         private static Serializer GSON_SERIALIZER = null;
         private static Serializer FAST_JOSN_SERIALIZER = null;
+        private static Serializer JACKSON_SERIALIZER = null;
 
         private static Serializer getGsonSerializer() {
             if (GSON_SERIALIZER == null) {
@@ -69,5 +85,35 @@ public class JsonSerializationFactory {
 
             return FAST_JOSN_SERIALIZER;
         }
+        
+        private static Serializer getJacksonSerializer() {
+            if (JACKSON_SERIALIZER == null) {
+                JACKSON_SERIALIZER = new Serializer() {
+
+                    private final ObjectMapper MAPPER = new ObjectMapper();
+
+                    @Override
+                    public String serialize(Object bean) {
+                        try {
+                            return MAPPER.writeValueAsString(bean);
+                        } catch (JsonProcessingException e) {
+                            throw new SerializationException("", e);
+                        }
+                    }
+                    
+                    @Override
+                    public <T> T deserialize(String series, Class<T> clazz) {
+                        try {
+                            return MAPPER.readValue(series, clazz);
+                        } catch (IOException e) {
+                            throw new DeserializationException("", e);
+                        }
+                    }
+                };
+            }
+            
+            return JACKSON_SERIALIZER;
+        }
     }
+
 }
