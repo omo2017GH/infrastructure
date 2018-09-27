@@ -1,9 +1,8 @@
 /**
-* Copyright: Copyright (c) 2018
-* Company: www.91wutong.com
-*/
+ * Copyright: Copyright (c) 2018 Company: www.91wutong.com
+ */
 
-package org.infrastructure.common.strategy;
+package org.infrastructure.common.strategy.demo;
 
 /**
  * 
@@ -13,28 +12,37 @@ package org.infrastructure.common.strategy;
  * @version 1.0
  * @since 7.1.2-SNAPSHOT
  */
-public class BeanBO implements IBeanBO {
+public class DemoBO extends BaseStrategyBO implements IDemoBO {
+
+    /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = 1817589632204059957L;
 
     private Long id;
     private String code;
+
     /**
      * @return the id
      */
     public Long getId() {
         return id;
     }
+
     /**
      * @param id the id to set
      */
     public void setId(Long id) {
         this.id = id;
     }
+
     /**
      * @return the code
      */
     public String getCode() {
         return code;
     }
+
     /**
      * @param code the code to set
      */

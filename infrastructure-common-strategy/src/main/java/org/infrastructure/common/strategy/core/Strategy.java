@@ -1,25 +1,21 @@
 /**
 * Copyright: Copyright (c) 2018
-* Company: www.91wutong.com
 */
-
 package org.infrastructure.common.strategy.core;
 
 /**
- * 
- * @date 2018年4月21日
+ * 策略模式接口类，此类负责策略的实施
+ * @date 2018年9月25日
  * 
  * @author zhihong.he
- * @version 1.0
- * @since 7.1.2-SNAPSHOT
+ * @version 0.1.0
  */
 public interface Strategy {
 
     /**
-     * 策略实施
-     * @param t
-     * @return
+     * 实施策略
+     * @param target 执行对象
      */
-    Object execute(StrategyContext context);
+    void execute(Object target);
 
 }

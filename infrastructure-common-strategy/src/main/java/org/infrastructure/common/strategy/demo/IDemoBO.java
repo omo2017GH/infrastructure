@@ -3,7 +3,9 @@
 * Company: www.91wutong.com
 */
 
-package org.infrastructure.common.strategy;
+package org.infrastructure.common.strategy.demo;
+
+import org.infrastructure.common.strategy.core.StrategyContext;
 
 /**
  * 
@@ -13,7 +15,7 @@ package org.infrastructure.common.strategy;
  * @version 1.0
  * @since 7.1.2-SNAPSHOT
  */
-public interface IBeanBO {
+public interface IDemoBO extends StrategyContext {
 
     Long getId();
     String getCode();
