@@ -4,12 +4,13 @@
 */
 package org.infrastructure.common.strategy.demo;
 
-/**  
- * <b>ClassName:</b> org.infrastructure.common.strategy.demo.DemoBO.java <br>  
- * <b>Description:</b> (用一句话介绍类的作用) <br> 
- * <b>Date:</b> 2018年9月27日 下午6:42:09 <br>  
- * @author zhihong.he <br>
- * @version 1.0 
+/**
+ * 基于策略模式的业务对象的示例
+ * 
+ * @date 2018年9月28日
+ * 
+ * @author zhihong.he
+ * @version 0.1.0
  */
 public class DemoBO extends BaseStrategyBO implements IDemoBO {
 

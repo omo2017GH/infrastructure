@@ -8,12 +8,12 @@ import org.infrastructure.common.strategy.demo.IDemoBO;
 import org.infrastructure.common.strategy.spring.StrategyForSpring;
 import org.springframework.context.ApplicationContext;
 
-/**  
- * <b>ClassName:</b> org.infrastructure.common.strategy.demo.spring.DemoSpringStrategy.java <br>  
- * <b>Description:</b> (用一句话介绍类的作用) <br> 
- * <b>Date:</b> 2018年9月27日 下午6:43:59 <br>  
- * @author zhihong.he <br>
- * @version 1.0 
+/**
+ * 基于Spring的策略示例
+ * @date 2018年9月28日
+ * 
+ * @author zhihong.he
+ * @version 0.1.0
  */
 public class DemoSpringStrategy implements StrategyForSpring {
 

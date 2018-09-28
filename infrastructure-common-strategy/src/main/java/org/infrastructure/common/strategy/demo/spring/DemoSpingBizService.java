@@ -11,12 +11,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 /**
- * <b>ClassName:</b> org.infrastructure.common.strategy.demo.spring.DemoSpingBizService.java <br>
- * <b>Description:</b> (用一句话介绍类的作用) <br>
- * <b>Date:</b> 2018年9月27日 下午6:49:03 <br>
+ * 基于Spring策略模式的业务服务示例
  * 
- * @author zhihong.he <br>
- * @version 1.0
+ * @date 2018年9月28日
+ * 
+ * @author zhihong.he
+ * @version 0.1.0
  */
 public class DemoSpingBizService implements IDemoSpingBizService, ApplicationContextAware {
 

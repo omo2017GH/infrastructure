@@ -4,18 +4,15 @@
 */
 package org.infrastructure.common.strategy.demo;
 
-import org.infrastructure.common.strategy.core.StrategyContext;
-
 /**
- * 基于策略模式的业务对象的接口示例
+ * 基于策略模式的业务服务接口示例
  * 
  * @date 2018年9月28日
  * 
  * @author zhihong.he
  * @version 0.1.0
  */
-public interface IDemoBO extends StrategyContext {
+public interface IDemoBizService {
 
-    Long getId();
-    String getCode();
+    void go(IDemoBO bo);
 }

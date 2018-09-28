@@ -1,18 +1,18 @@
 /**
-* Copyright: Copyright (c) 2018
-* Company: www.91wutong.com
-*/
+ * Copyright: Copyright (c) 2018 Company: www.91wutong.com
+ */
 package org.infrastructure.common.strategy.demo;
 
 import org.infrastructure.common.strategy.core.AbstractStrategyContext;
 import org.infrastructure.common.strategy.core.Strategy;
 
-/**  
- * <b>ClassName:</b> org.infrastructure.common.strategy.demo.BaseStrategyBO.java <br>  
- * <b>Description:</b> (用一句话介绍类的作用) <br> 
- * <b>Date:</b> 2018年9月27日 下午6:40:42 <br>  
- * @author zhihong.he <br>
- * @version 1.0 
+/**
+ * 基于策略模式的业务对象，在普通的业务模型中嵌入策略，业务在确定模型的同时也能确定使用何种策略
+ * 
+ * @date 2018年9月28日
+ * 
+ * @author zhihong.he
+ * @version 0.1.0
  */
 public abstract class BaseStrategyBO extends AbstractStrategyContext {
 

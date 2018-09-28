@@ -9,12 +9,12 @@ import org.infrastructure.common.strategy.demo.spring.IDemoSpingBizService;
 import org.infrastructure.common.strategy.demo.spring.SpringDemoBO;
 import org.testng.annotations.Test;
 
-/**  
- * <b>ClassName:</b> org.infrastructure.common.strategy.SpringDemoBizServiceTest.java <br>  
- * <b>Description:</b> (用一句话介绍类的作用) <br> 
- * <b>Date:</b> 2018年9月27日 下午3:58:22 <br>  
- * @author zhihong.he <br>
- * @version 1.0 
+/**
+ * 基于Spring策略模式测试类
+ * @date 2018年9月28日
+ * 
+ * @author zhihong.he
+ * @version 0.1.0
  */
 public class SpringDemoBizServiceTest {
 
