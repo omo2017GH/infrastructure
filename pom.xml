@@ -284,5 +284,6 @@
 		<module>infrastructure-common</module>
     <module>infrastructure-common-command</module>
     <module>infrastructure-common-strategy</module>
+    <module>infrastructure-common-factory</module>
   </modules>
 </project>
