@@ -28,6 +28,7 @@ public class DemoSpingBizService implements IDemoSpingBizService, ApplicationCon
      */
     @Override
     public void go(IDemoBO bo) {
+        // 这里有适配器模式的影子，将 IDemoBO(StrategyContext) 和 applicationContext 适配成一个新的 StrategyContextForSpirng 接口
         StrategyContextForSpirng strategyContextForSpirng = new StrategyContextForSpirngAdapter(bo, applicationContext);
         strategyContextForSpirng.execute();
     }
