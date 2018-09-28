@@ -13,7 +13,7 @@ import org.infrastructure.common.strategy.demo.DemoBO;
  * @author zhihong.he
  * @version 0.1.0
  */
-public class SpringDemoBO extends DemoBO {
+public class SpringDemoBO extends DemoBO implements ISpringDemoBO {
 
     /**
      * serialVersionUID
@@ -24,4 +24,5 @@ public class SpringDemoBO extends DemoBO {
         // 策略对调用方透明，由服务方封装策略
         setStrategy(new DemoSpringStrategy());
     }
+
 }

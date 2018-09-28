@@ -3,7 +3,6 @@
  */
 package org.infrastructure.common.strategy.demo.spring;
 
-import org.infrastructure.common.strategy.demo.IDemoBO;
 import org.infrastructure.common.strategy.spring.StrategyContextForSpirng;
 import org.infrastructure.common.strategy.spring.StrategyContextForSpirngAdapter;
 import org.springframework.beans.BeansException;
@@ -27,7 +26,7 @@ public class DemoSpingBizService implements IDemoSpingBizService, ApplicationCon
      * @see org.infrastructure.common.strategy.demo.spring.IDemoSpingBizService#go(org.infrastructure.common.strategy.demo.IDemoBO)
      */
     @Override
-    public void go(IDemoBO bo) {
+    public void go(ISpringDemoBO bo) {
         // 这里有适配器模式的影子，将 IDemoBO(StrategyContext) 和 applicationContext 适配成一个新的 StrategyContextForSpirng 接口
         StrategyContextForSpirng strategyContextForSpirng = new StrategyContextForSpirngAdapter(bo, applicationContext);
         strategyContextForSpirng.execute();

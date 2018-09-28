@@ -21,6 +21,7 @@ public abstract class AbstractStrategyContextForSpirng implements StrategyContex
 
     private StrategyContext strategyContext;
     private ApplicationContext applicationContext;
+    private String serviceName;
 
     @Override
     public Object get() {
@@ -62,6 +63,7 @@ public abstract class AbstractStrategyContextForSpirng implements StrategyContex
     public void setStrategyContext(StrategyContext strategyContext) {
         this.strategyContext = strategyContext;
     }
+
     /**
      * @return
      * @see org.infrastructure.common.strategy.spring.StrategyContextForSpirng#getApplicationContext()
@@ -76,6 +78,21 @@ public abstract class AbstractStrategyContextForSpirng implements StrategyContex
      */
     public void setApplicationContext(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
+    }
+
+    /**
+     * @see org.infrastructure.common.strategy.spring.StrategyContextForSpirng#getServiceName()
+     */
+    @Override
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    /**
+     * @param serviceName the serviceName to set
+     */
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
 }

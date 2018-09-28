@@ -4,7 +4,6 @@
 */
 package org.infrastructure.common.strategy.demo.spring;
 
-import org.infrastructure.common.strategy.demo.IDemoBO;
 import org.infrastructure.common.strategy.spring.StrategyForSpring;
 import org.springframework.context.ApplicationContext;
 
@@ -33,14 +32,21 @@ public class DemoSpringStrategy implements StrategyForSpring {
      */
     @Override
     public void execute(Object target, ApplicationContext applicationContext) {
-        if (!(target instanceof IDemoBO)) {
+        if (!(target instanceof ISpringDemoBO)) {
             System.out.println("target is not instanceof IDemoBO");
             return;
         }
 
-        IDemoBO bo = (IDemoBO) target;
-        System.out.println("IDemoBO = " + bo);
+        ISpringDemoBO bo = (ISpringDemoBO) target;
+        System.out.println("ISpringDemoBO = " + bo);
+        String serviceName = getServiceName();
+        System.out.println("serviceName = " + serviceName);
         System.out.println("ApplicationContext = " + applicationContext);
+    }
+
+    @Override
+    public String getServiceName() {
+        return "demoSpringStrategyService";
     }
 
 }
