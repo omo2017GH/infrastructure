@@ -14,7 +14,7 @@ import org.springframework.context.ApplicationContext;
  * @author zhihong.he
  * @version 0.1.0
  */
-public interface StrategyContextForSpirng extends StrategyContext, SpringBeanNameExtractor {
+public interface StrategyContextForSpirng extends StrategyContext {
 
     /**
      * @return Spring 应用上下文
