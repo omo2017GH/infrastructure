@@ -21,7 +21,7 @@ public class SpringDemoBO extends DemoBO implements ISpringDemoBO {
     private static final long serialVersionUID = -1297294105690795398L;
 
     public SpringDemoBO() {
-        // 策略对调用方透明，由服务方封装策略
+        // 策略对业务透明，由服务方封装策略
         setStrategy(new DemoSpringStrategy());
     }
 
